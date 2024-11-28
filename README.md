@@ -12,4 +12,4 @@ whereas more information is offered if you click on any of the characters, like 
 - Clone the repository
 - npm install
 - npm run dev
-- Project will be available on: 
+- Project will be available on: http://beta.adalab.es/modulo-3-evaluacion-final-Tania-nad/
