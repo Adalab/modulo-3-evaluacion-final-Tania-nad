@@ -3,12 +3,11 @@ function CharacterDetail({ character }) {
   return (
     <section>
       <img src={character.photo} alt="" />
-      <h4>{character.name}</h4>
-      <p>{character.planet}</p>
-      <p>{character.specie}</p>
-      <p>{character.planet}</p>
-      <p>{character.episodes}</p>
-      <p>{character.status}</p>
+      <h3>{character.name}</h3>
+      <p>Status:{character.status}</p>
+      <p>Species:{character.specie}</p>
+      <p>Origin:{character.planet}</p>
+      <p>Episodes:{character.episodes}</p>
     </section>
   );
 }
