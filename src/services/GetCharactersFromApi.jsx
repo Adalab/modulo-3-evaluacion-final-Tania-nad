@@ -13,6 +13,7 @@ const getCharactersFromApi = () => {
           planet: character.origin.name,
           status: character.status,
           id: character.id,
+          episodes: character.episode.length,
         };
       });
       return parsedCharacters;
