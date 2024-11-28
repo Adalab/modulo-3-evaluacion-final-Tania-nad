@@ -1,9 +1,11 @@
 import "../scss/App.scss";
 import CharacterList from "./CharacterList";
 import Filter from "./Filter";
+import CharacterDetail from "./CharacterDetail";
 import { useEffect } from "react";
 import { useState } from "react";
 import getCharactersFromApi from "../services/GetCharactersFromApi";
+import { Routes, Route, useLocation, matchPath } from "react-router-dom";
 
 function App() {
   //variables de estado
@@ -19,7 +21,7 @@ function App() {
     getCharactersFromApi().then((charactersData) => {
       setCharacters(charactersData);
     });
-  });
+  }, []);
   //lifting de la hija Filter a App
   const handleFilterName = (value) => {
     setFilterName(value);
@@ -29,12 +31,35 @@ function App() {
     return character.name.toLowerCase().includes(filterName.toLowerCase());
   });
 
+  /*Ruta dinámica del detalle del personaje
+    - Saber si la usuaria está en la ruta detalle
+    - Obtener el id del personaje
+    - Buscar en la lista de personajes, el personaje con ese id
+    - Pasar la información del personaje a UserDetail para pintarlo
+  */
+  const { pathname } = useLocation();
+  const routeData = matchPath("/character/:idCharacter", pathname);
+  const urlId = routeData !== null ? routeData.params.idCharacter : null;
+  const character = characters.find((character) => {
+    return character.id === urlId;
+  });
+
   return (
     <>
       <header>Rick and Morty</header>
       <main>
-        <Filter onChangeName={handleFilterName} />
-        <CharacterList characters={filteredCharacters} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filter onChangeName={handleFilterName} />
+                <CharacterList characters={filteredCharacters} />
+              </>
+            }
+          />
+          <Route path="/character/:idCharacter" element={<CharacterDetail />} />
+        </Routes>
       </main>
     </>
   );
