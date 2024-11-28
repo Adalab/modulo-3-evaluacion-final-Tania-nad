@@ -1,4 +1,5 @@
 import "../scss/layout/CharacterDetail.scss";
+//import "../scss/layout/App.scss";
 function CharacterDetail({ character }) {
   console.log(character);
   return (

@@ -53,21 +53,23 @@ function App() {
         <img src={Image} alt="" className="header" />
       </header>
       <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Filter onChangeName={handleFilterName} />
-                <CharacterList characters={filteredCharacters} />
-              </>
-            }
-          />
-          <Route
-            path="/character/:idCharacter"
-            element={<CharacterDetail character={character} />}
-          />
-        </Routes>
+        <div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Filter onChangeName={handleFilterName} />
+                  <CharacterList characters={filteredCharacters} />
+                </>
+              }
+            />
+            <Route
+              path="/character/:idCharacter"
+              element={<CharacterDetail character={character} />}
+            />
+          </Routes>
+        </div>
       </main>
     </>
   );
