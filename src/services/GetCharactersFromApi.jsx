@@ -12,6 +12,7 @@ const getCharactersFromApi = () => {
           specie: character.species,
           planet: character.origin.name,
           status: character.status,
+          id: character.id,
         };
       });
       return parsedCharacters;
