@@ -1,12 +1,15 @@
+import "../scss/layout/Filter.scss";
 function Filter({ onChangeName }) {
   const handleChangeName = (event) => {
     onChangeName(event.target.value);
   };
   return (
-    <form>
-      <label htmlFor="name">Nombre del personaje</label>
-      <input type="text" id="name" onChange={handleChangeName} />
-    </form>
+    <div className="filter">
+      <form>
+        <label htmlFor="name">Nombre del personaje</label>
+        <input type="text" id="name" onChange={handleChangeName} />
+      </form>
+    </div>
   );
 }
 

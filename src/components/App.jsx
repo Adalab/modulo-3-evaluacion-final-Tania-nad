@@ -1,5 +1,5 @@
 import "../scss/App.scss";
-import "../scss/layout/Main.scss";
+import "../scss/layout/App.scss";
 import CharacterList from "./CharacterList";
 import Filter from "./Filter";
 import CharacterDetail from "./CharacterDetail";
@@ -49,8 +49,8 @@ function App() {
 
   return (
     <>
-      <header>
-        <img src={Image} alt="" />
+      <header className="header">
+        <img src={Image} alt="" className="header" />
       </header>
       <main>
         <Routes>

@@ -1,7 +1,8 @@
+import "../scss/layout/CharacterDetail.scss";
 function CharacterDetail({ character }) {
   console.log(character);
   return (
-    <section>
+    <section className="section">
       <img src={character.photo} alt="" />
       <h3>{character.name}</h3>
       <p>Status:{character.status}</p>
