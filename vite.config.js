@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: { watch: { usePolling: true } }
+  server: { watch: { usePolling: true } },
+  base: "/modulo-3-evaluacion-final-Tania-nad/",
 })
