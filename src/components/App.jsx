@@ -13,6 +13,7 @@ function App() {
   //variables de estado
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
+  const [warning, setWarning] = useState("");
   /* 
   Pintar la lista de personajes
    Hacer una petición al servidor 
@@ -32,6 +33,23 @@ function App() {
   const filteredCharacters = characters.filter((character) => {
     return character.name.toLowerCase().includes(filterName.toLowerCase());
   });
+  /*Mensaje de input no encontrado
+    Cuando la usuaria escriba en el input
+	    Recoger valor de input
+	      Si coincide con mi lista de personajes
+		    Pinto el personaje
+	    Sino
+		    Muestro el mensaje: el personaje no ha sido encontrado
+  */
+  useEffect(() => {
+    if (filteredCharacters.length === 0) {
+      setWarning(
+        "No hay ningún personaje que coincida con la palabra que buscas"
+      );
+    } else {
+      setWarning("");
+    }
+  }, [filterName, characters]);
 
   /*Ruta dinámica del detalle del personaje
     - Saber si la usuaria está en la ruta detalle
@@ -61,6 +79,9 @@ function App() {
                 <>
                   <Filter onChangeName={handleFilterName} />
                   <CharacterList characters={filteredCharacters} />
+                  <div className="warning-container">
+                    <p className="warning">{warning}</p>
+                  </div>
                 </>
               }
             />
