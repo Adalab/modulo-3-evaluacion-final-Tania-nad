@@ -1,13 +1,22 @@
 import "../scss/layout/Filter.scss";
 function Filter({ onChangeName }) {
   const handleChangeName = (event) => {
+    event.preventDefault();
     onChangeName(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
   };
   return (
     <div className="filter">
-      <form>
-        <label htmlFor="name">Nombre del personaje</label>
-        <input type="text" id="name" onChange={handleChangeName} />
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name"></label>
+        <input
+          type="text"
+          id="name"
+          onChange={handleChangeName}
+          className="filterInput"
+        />
       </form>
     </div>
   );

@@ -14,6 +14,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [warning, setWarning] = useState("");
+  const [search, setSearch] = useState("");
   /* 
   Pintar la lista de personajes
    Hacer una petición al servidor 
@@ -29,6 +30,7 @@ function App() {
   const handleFilterName = (value) => {
     setFilterName(value);
   };
+
   //Filtrar la lista de personajes por nombre
   const filteredCharacters = characters.filter((character) => {
     return character.name.toLowerCase().includes(filterName.toLowerCase());

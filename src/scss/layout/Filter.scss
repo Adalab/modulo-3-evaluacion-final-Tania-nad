@@ -5,5 +5,20 @@
     left: 0;
     color: white;
     text-align: center;
+   
+
+}
+.filterInput:hover{
+    background-color: black;
+    position: relative;
+    top: 0;
+    left: 0;
+    color: white;
+    text-align: center;
+    border: 1px solid blue;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7)
+    
 
 }
