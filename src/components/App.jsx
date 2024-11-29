@@ -14,7 +14,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [warning, setWarning] = useState("");
-  const [search, setSearch] = useState("");
+
   /* 
   Pintar la lista de personajes
    Hacer una petición al servidor 
