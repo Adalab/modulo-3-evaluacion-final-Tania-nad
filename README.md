@@ -1,8 +1,15 @@
-# React + Vite
+# Rick and Morty
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website about Rick and Morty characters search. On the main site, you can see general information of the characters, such as: picture, name and status (dead or alive), 
+whereas more information is offered if you click on any of the characters, like planet, episodes and specie (on a differente sight).
 
-Currently, two official plugins are available:
+## Content
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React and React Router Dom
+- npm run dev to run the project
+
+### Install
+- Clone the repository
+- npm install
+- npm run dev
+- Project will be available on: http://beta.adalab.es/modulo-3-evaluacion-final-Tania-nad/
